@@ -1,0 +1,47 @@
+header {
+  padding: 10px 0;
+  .header__wrap {
+    @include flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header__brand {
+    max-width: 90px;
+    img {
+      width: 100%;
+    }
+  }
+  .header__nav {
+    ul {
+      @include flex;
+      li {
+        padding: 0 13px;
+        a {
+          color: map-get($theme-color, primary-color);
+          font-family: 'Lato', sans-serif;
+          line-height: 1.222;
+          font-size: 1.125rem;
+          @include transition(0.3s ease-in-out);
+          &:hover,
+          &:focus {
+            color: map-get($theme-color, secondary-color);
+          }
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.icon-toggle,
+.fa-times {
+  display: none;
+  @include transition(0.3s ease-in-out);
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: map-get($theme-color, secondary-color);
+  }
+}

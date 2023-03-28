@@ -1,0 +1,17 @@
+@media screen and (max-width: $mobile-width) {
+  footer .bean {
+    width: 70px;
+  }
+  footer .fourth-bean {
+    bottom: 0;
+    left: auto;
+    right: -30px;
+    top: auto;
+  }
+
+  footer {
+    .bean {
+      width: 70px;
+    }
+  }
+}

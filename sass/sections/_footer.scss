@@ -1,0 +1,88 @@
+footer {
+  background-color: map-get($background-color, background-dark-color);
+  position: relative;
+  padding: 150px 0;
+  overflow: hidden;
+
+  .first-bean {
+    left: 0;
+    position: absolute;
+    top: -30px;
+  }
+
+  .second-bean,
+  .fourth-bean {
+    left: 65%;
+    position: absolute;
+    transform: rotate(101deg);
+    -webkit-transform: rotate(101deg);
+    -moz-transform: rotate(101deg);
+    top: 30px;
+  }
+
+  .third-bean.bean {
+    position: absolute;
+    right: 100px;
+    top: 40%;
+    transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+
+    img {
+      filter: blur(3px);
+    }
+  }
+
+  .fourth-bean {
+    bottom: 0;
+    left: auto;
+    right: -50px;
+    top: auto;
+  }
+
+  .fifth-bean.bean {
+    bottom: 0;
+    position: absolute;
+    left: -70px;
+    transform: rotate(4deg);
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+
+    img {
+      filter: blur(3px);
+    }
+  }
+
+  .footer__wrap {
+    img {
+      max-width: 200px;
+    }
+
+    ul {
+      position: relative;
+      z-index: 9;
+
+      li:not(:last-child) {
+        margin-bottom: 22px;
+      }
+    }
+
+    color: map-get($theme-color, color-light);
+    font-size: $m-font-size;
+    font-family: 'Roboto';
+    margin: 0 auto;
+    max-width: 430px;
+    text-align: center;
+  }
+
+  .social-icons {
+    @include flex;
+    justify-content: center;
+    margin-top: 22px;
+
+    li {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+}

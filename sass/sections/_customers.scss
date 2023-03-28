@@ -1,0 +1,77 @@
+.customers {
+  overflow-x: hidden;
+  .owl-stage {
+    // flex: 1;
+    // justify-content: space-between;
+    .item {
+      padding: 30px;
+    }
+    .owl-item.active.center {
+      .item {
+        border: 2px solid;
+        border-color: map-get($theme-color, border-color);
+        position: relative;
+        &:before {
+          content: '';
+          background: url('../../images/quote.png') no-repeat center;
+          background-size: cover;
+          height: 37px;
+          left: 40px;
+          position: absolute;
+          top: -21px;
+          width: 47px;
+          z-index: 2;
+        }
+        &:after {
+          content: '';
+          background-color: #fff;
+          background-size: cover;
+          height: 37px;
+          left: 34px;
+          position: absolute;
+          top: -21px;
+          width: 60px;
+          z-index: 0;
+        }
+      }
+    }
+  }
+  .slider__item {
+    .thumbnail {
+      align-items: center;
+      display: flex;
+      margin-top: 15px;
+      img {
+        @include border(45px);
+        height: 68px;
+        margin-right: 10px;
+        object-fit: cover;
+        width: 68px;
+      }
+
+      a {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+section:nth-child(even) {
+  .owl-stage .owl-item.active.center .item:after {
+    background-color: #fef8f1;
+  }
+}
+
+#customers.customers {
+  .wrapper {
+    .customer__wrap {
+      .owl-carousel {
+        .owl-stage {
+          .owl-item {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}

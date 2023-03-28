@@ -1,0 +1,55 @@
+.hero {
+  padding: 200px 0;
+  background: url(../../images/hero.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  .hero__content {
+    align-items: center;
+    color: map-get($theme-color, color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+      font-size: $Xl-font-size;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .btn-primary {
+      color: map-get($theme-color, color-light);
+    }
+  }
+}
+
+.overlays {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #f4f4f4;
+  z-index: 1;
+  height: 33.33333333333333%;
+}
+
+.one {
+  top: 0;
+}
+
+.two {
+  top: 33.33333333333333%;
+}
+
+.three {
+  bottom: 0;
+  top: auto;
+}

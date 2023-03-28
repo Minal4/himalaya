@@ -1,0 +1,33 @@
+.services {
+  .services__wrap .first-row,
+  .services__wrap .second-row {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+  .services__content {
+    align-items: center;
+    text-align: center;
+    img {
+      max-width: 80px;
+      margin-bottom: 27px;
+    }
+    h3 {
+      font-size: $m-font-size;
+      font-weight: 700;
+      margin-bottom: 27px;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.first-row div,
+.second-row div {
+  width: 25%;
+}
+
+.services .services__wrap .second-row {
+  justify-content: space-around;
+}
