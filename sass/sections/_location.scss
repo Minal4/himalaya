@@ -1,22 +1,27 @@
 .location {
   padding: 0;
+
   .location__wrap {
     background: url('../../images/map.png') no-repeat center;
     height: 100%;
     width: 100%;
-    // background-size: cover;
+    background-position: bottom center;
+    background-attachment: fixed;
     padding: 112px 0;
+
     .location__content {
       max-width: 780px;
       margin: 0 auto;
       position: relative;
       text-align: center;
       z-index: 1;
+
       .btn-primary {
         font-size: $m-font-size;
       }
     }
   }
+
   &:after {
     content: '';
     background-color: #f4eadc;

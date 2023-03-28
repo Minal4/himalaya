@@ -64,6 +64,7 @@ tl1 = gsap.timeline({
 let tl5 = gsap.timeline({
   scrollTrigger: {
     trigger: '.coffee-section',
+    scrub: 3,
     start: 'top center',
     toggleActions: "play none none reverse",
   },
@@ -95,14 +96,22 @@ let tl3 = gsap.timeline({
 
 })
 
-tl5.to('.sticky-image', 1, { position: 'sticky', top: 0 })
+const windowWidth = 1024
+
+
+if (window.innerWidth > windowWidth) {
+  tl5.to('.sticky-image', 1, { position: 'sticky', top: 0 })
+    .to('.sticky-image img', 1, { scale: 1.2 }, 0.2)
+}
+
+
 
 let listContent = document.querySelector('.drinks__content ul')
 if (listContent !== null) {
 
   tl.fromTo('.bread', 1, { opacity: 0, x: '-50%' }, { opacity: 1, x: 0 })
     .fromTo('.beans', 1.8, { opacity: 0, x: '50%' }, { opacity: 1, x: 0 }, 0.4)
-    .fromTo(listContent.children, 0.8, { opacity: 0, y: '-10%' }, { opacity: 1, y: '0', stagger: 0.2 }, 1)
+    .fromTo(listContent.children, 0.8, { opacity: 0, y: '-10%' }, { opacity: 1, y: '0', stagger: 0.2 }, 1.2)
 }
 
 const heroContent = document.querySelector('.hero__content')
@@ -124,7 +133,7 @@ let tlBanner = gsap.timeline({
 })
 tlBanner.from('.overlay', 0.6, { x: '-100%' }, 0.5)
   .to('.overlay', 0.5, { x: '100%' })
-  .to('.banner__image', 1, { scale: 1, opacity: 1 }, 1)
-  .fromTo('.outline-text', 0.5, { y: '-50%', opacity: 0 }, { y: 0, opacity: 1 })
-  .fromTo('.next-text', 1, { y: '-50%', opacity: 0 }, { y: 0, opacity: 1 })
-  .fromTo('.content', 1, { y: '-50%', opacity: 0 }, { y: 0, opacity: 1 })
+  .to('.banner__image', 1, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', scale: 1, opacity: 1, }, 0.8)
+  .fromTo('.outline-text', 0.5, { y: '-50%', opacity: 0 }, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y: 0, opacity: 1 })
+  .fromTo('.next-text', 1, { y: '-50%', opacity: 0 }, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y: 0, opacity: 1 })
+  .fromTo('.content', 0.5, { y: '-50%', opacity: 0 }, { y: 0, opacity: 1 })

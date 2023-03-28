@@ -35,6 +35,7 @@
         transform: scale(1.2);
         transform-origin: center;
         opacity: 0;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     }
 
     .content {
@@ -61,11 +62,17 @@
             color: #000;
             position: relative;
 
+
             span.outline-text {
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 display: block;
                 color: transparent;
                 -webkit-text-stroke-width: 2px;
                 -webkit-text-stroke-color: black;
+            }
+
+            .next-text {
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
             }
         }
     }

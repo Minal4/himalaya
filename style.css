@@ -177,52 +177,6 @@ button.owl-dot {
     width: 14px; }
 
 /*--------------------------------------------------------------
->>> HERO
-----------------------------------------------------------------*/
-.hero {
-  padding: 200px 0;
-  background: url(../../images/hero.png) no-repeat center;
-  background-size: cover;
-  position: relative;
-  overflow: hidden; }
-  .hero .hero__content {
-    align-items: center;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 550px;
-    margin: 0 auto;
-    text-align: center; }
-    .hero .hero__content h2 {
-      font-size: 2.8125rem;
-      font-weight: 700;
-      margin-bottom: 40px; }
-    .hero .hero__content p {
-      text-align: center; }
-    .hero .hero__content .btn-primary {
-      color: #fff; }
-
-.overlays {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  background-color: #f4f4f4;
-  z-index: 1;
-  height: 33.33333333333333%; }
-
-.one {
-  top: 0; }
-
-.two {
-  top: 33.33333333333333%; }
-
-.three {
-  bottom: 0;
-  top: auto; }
-
-/*--------------------------------------------------------------
 >>> DRINKS
 ----------------------------------------------------------------*/
 .drinks {
@@ -317,7 +271,8 @@ button.owl-dot {
     transform-origin: left;
     transform: scale(1.2);
     transform-origin: center;
-    opacity: 0; }
+    opacity: 0;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
   .banner .content {
     font-weight: 600;
     text-decoration: underline;
@@ -338,10 +293,13 @@ button.owl-dot {
       color: #000;
       position: relative; }
       .banner__text h1 span.outline-text {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         display: block;
         color: transparent;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: black; }
+      .banner__text h1 .next-text {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
 
 @media screen and (min-width: 1024px) {
   .banner {
@@ -372,12 +330,17 @@ button.owl-dot {
 ----------------------------------------------------------------*/
 .coffee-wrap {
   display: grid;
-  grid-template-columns: 50% auto; }
+  grid-template-columns: 1fr; }
 
 .coffee-section img {
-  object-fit: cover; }
+  object-fit: cover;
+  display: block; }
 .coffee-section .sticky-image {
-  height: 20vh; }
+  overflow: hidden;
+  height: 50vh; }
+  .coffee-section .sticky-image img {
+    transform-origin: center;
+    object-position: top center; }
 
 /*--------------------------------------------------------------
 >>> SERVICES
@@ -469,6 +432,8 @@ section:nth-child(even) .owl-stage .owl-item.active.center .item:after {
     background: url("../../images/map.png") no-repeat center;
     height: 100%;
     width: 100%;
+    background-position: bottom center;
+    background-attachment: fixed;
     padding: 112px 0; }
     .location .location__wrap .location__content {
       max-width: 780px;
@@ -619,7 +584,12 @@ footer {
 >>> HEADER
 ----------------------------------------------------------------*/
 header {
-  padding: 10px 0; }
+  padding: 10px 0;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(5px); }
   header .header__wrap {
     display: flex;
     display: -webkit-box;
@@ -733,6 +703,13 @@ header {
   .section__title h2 {
     display: inline-block;
     font-size: 1.8125rem; } }
+@media screen and (min-width: 1024px) {
+  .coffee-section .coffee-wrap {
+    grid-template-columns: 50% auto; }
+  .coffee-section .sticky-image {
+    height: 100vh; }
+    .coffee-section .sticky-image img {
+      object-position: center center; } }
 @media screen and (max-width: 767px) {
   header {
     padding: 5px 0; }

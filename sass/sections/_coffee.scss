@@ -1,16 +1,23 @@
 .coffee-wrap {
     display: grid;
-    grid-template-columns: 50% auto;
+    grid-template-columns: 1fr;
 }
 
 .coffee-section {
 
     img {
         object-fit: cover;
+        display: block;
     }
 
     .sticky-image {
-        height: 20vh;
+        overflow: hidden;
+        height: 50vh;
+
+        img {
+            transform-origin: center;
+            object-position: top center;
+        }
     }
 
 }
